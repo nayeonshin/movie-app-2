@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+
+import Movie from "./components/Movie";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,21 +29,25 @@ function App() {
       ) : (
         <div>
           {movies.map((movie) => (
-            <div key={movie.id}>
-              <img alt="Cover" src={movie.medium_cover_image} />
-              <h2>{movie.title}</h2>
-              <p>{movie.summary}</p>
-              <ul>
-                {movie.genres?.map((genre) => (
-                  <li key={genre}>{genre}</li>
-                ))}
-              </ul>
-            </div>
+            <Movie
+              coverImage={movie.medium_cover_image}
+              genres={movie.genres}
+              key={movie.id}
+              summary={movie.summary}
+              title={movie.title}
+            />
           ))}
         </div>
       )}
     </div>
   );
 }
+
+Movie.propTypes = {
+  coverImage: PropTypes.string.isRequired,
+  genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+  summary: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 export default App;
