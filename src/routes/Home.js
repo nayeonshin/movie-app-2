@@ -13,7 +13,7 @@ function Home() {
     ).json();
 
     setMovies(json.data.movies);
-    setIsLoading((current) => !current);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -30,6 +30,7 @@ function Home() {
             <Movie
               coverImage={movie.medium_cover_image}
               genres={movie.genres}
+              id={movie.id}
               key={movie.id}
               summary={movie.summary}
               title={movie.title}
