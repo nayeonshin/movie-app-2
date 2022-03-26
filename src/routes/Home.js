@@ -38,6 +38,7 @@ function Home() {
               key={movie.id}
               summary={movie.summary}
               title={movie.title}
+              year={movie.year}
             />
           ))}
         </div>
