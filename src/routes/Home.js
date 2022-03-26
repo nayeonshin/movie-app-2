@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Movie from "../components/Movie";
 
+import styles from "./Home.module.css";
+
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [movies, setMovies] = useState([]);
@@ -21,11 +23,13 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       {isLoading ? (
-        <h1>Loading...</h1>
+        <div className={styles.loader}>
+          <span>Loading...</span>
+        </div>
       ) : (
-        <div>
+        <div className={styles.movies}>
           {movies.map((movie) => (
             <Movie
               coverImage={movie.medium_cover_image}
