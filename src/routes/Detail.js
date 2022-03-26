@@ -16,7 +16,6 @@ function Detail() {
     setIsLoading(false);
   }, [id]);
 
-  console.log(details);
   useEffect(() => {
     getMovie();
   }, [getMovie]);
