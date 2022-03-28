@@ -20,6 +20,7 @@ function Movie({ coverImage, genres, id, summary, title, year }) {
           ))}
         </ul>
         <p className={styles.movie__summary}>
+          {summary === "" ? "No summary" : null}
           {summary.length > 250 ? `${summary.slice(0, 250)}...` : summary}
         </p>
       </div>
