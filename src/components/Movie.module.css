@@ -1,3 +1,11 @@
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  transform: scale(1.01);
+}
+
 .movie {
   background-color: white;
   border-radius: 5px;
@@ -10,7 +18,6 @@
   grid-template-columns: minmax(150px, 1fr) 2fr;
   margin-bottom: 70px;
   padding: 20px;
-  text-decoration: none;
 }
 
 .movie__img {
