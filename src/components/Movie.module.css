@@ -57,3 +57,7 @@
   font-size: 14px;
   margin-right: 10px;
 }
+
+.movie__summary {
+  grid-column: 1 / -1;
+}

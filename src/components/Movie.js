@@ -19,7 +19,9 @@ function Movie({ coverImage, genres, id, summary, title, year }) {
             <li key={genre}>{genre}</li>
           ))}
         </ul>
-        <p>{summary.length > 250 ? `${summary.slice(0, 250)}...` : summary}</p>
+        <p className={styles.movie__summary}>
+          {summary.length > 250 ? `${summary.slice(0, 250)}...` : summary}
+        </p>
       </div>
     </Link>
   );
