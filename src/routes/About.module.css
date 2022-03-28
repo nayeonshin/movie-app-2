@@ -1,0 +1,11 @@
+.card {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: var(--gray-shadow);
+  padding: 20px;
+  width: 400px;
+}
+
+.card__introduction {
+  margin: 0 0 15px 0;
+}
