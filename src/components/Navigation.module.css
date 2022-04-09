@@ -26,22 +26,28 @@
   font-size: 15px;
   font-weight: 600;
   list-style-type: none;
-  padding: 10px 20px;
+  margin: 0;
+  padding: 0;
   text-align: center;
   text-transform: uppercase;
   width: 100%;
 }
 
-.navigation ul:first-child {
+.navigation li {
+  padding: 15px 20px;
+}
+
+.navigation li:first-child:hover,
+.navigation li:last-child:hover {
+  background-color: aliceblue;
+}
+
+.navigation li:first-child {
   border-radius: 5px 5px 0 0;
 }
 
-.navigation ul:last-child {
+.navigation li:last-child {
   border-radius: 0 0 5px 5px;
-}
-
-.navigation li:hover {
-  background-color: aliceblue;
 }
 
 .navigation a {
