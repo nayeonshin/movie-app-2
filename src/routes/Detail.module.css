@@ -1,0 +1,45 @@
+.page {
+  margin-top: 80px;
+}
+
+.title {
+  text-align: center;
+}
+
+.details {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.details__cover {
+  margin-right: 20px;
+}
+
+.details__categories {
+  display: flex;
+  flex-direction: column;
+}
+
+.details__description {
+  width: 750px;
+}
+
+@media screen and (max-width: 1090px) {
+  .page {
+    margin-top: auto;
+  }
+
+  .details {
+    flex-direction: column;
+    margin-bottom: 100px;
+  }
+
+  .details__categories {
+    margin-top: 20px;
+  }
+
+  .details__description {
+    width: 90vw;
+  }
+}

@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import styles from "./Detail.module.css";
+
 function Detail() {
   const [isLoading, setIsLoading] = useState(true);
   const [details, setDetails] = useState([]);
@@ -21,19 +23,31 @@ function Detail() {
   }, [getMovie]);
 
   return (
-    <div>
+    <div className={styles.page}>
       {isLoading ? (
-        <h1>Loading...</h1>
+        <span>Loading...</span>
       ) : (
         <div>
-          <h1>{details.title}</h1>
-          <img src={details.medium_cover_image} alt="" />
-          <span>{details.year}</span>
-          {details.genres.map((genre) => (
-            <span key={genre}>{genre}</span>
-          ))}
-          <span>❤ {details.like_count}</span>
-          <p>{details.description_full}</p>
+          <h1 className={styles.title}>{details.title}</h1>
+          <div className={styles.details}>
+            <img
+              alt="Poster"
+              className={styles.details__cover}
+              src={details.medium_cover_image}
+            />
+            <div>
+              <div className={styles.details__categories}>
+                <span>{details.year}</span>
+                {details.genres.map((genre) => (
+                  <span key={genre}>{genre}</span>
+                ))}
+                <span>❤ {details.like_count}</span>
+              </div>
+              <p className={styles.details__description}>
+                {details.description_full}
+              </p>
+            </div>
+          </div>
         </div>
       )}
     </div>
